@@ -13,10 +13,21 @@ class Users extends React.Component {
   // }
 
   componentDidMount(){
-    axios.get("http://localhost:3004/users")
+    axios.get(`http://localhost:3004/users?_page=${this.props.currentPage}&_limit=${this.props.pageSize}`)
+      .then(response => {        
+        debugger
+        this.props.setUsers(response.data)
+        this.props.setTotalUsersCount(response.headers["x-total-count"])
+      })  
+      
+  }
+
+  onPageChanged = (pageNumber) => {
+    this.props.setCurrentPage(pageNumber)
+    axios.get(`http://localhost:3004/users?_page=${pageNumber}&_limit=${this.props.pageSize}`)
       .then(response => {          
         this.props.setUsers(response.data)
-      })  
+    })
   }
 
   render() {
@@ -31,7 +42,9 @@ class Users extends React.Component {
       <div >
         <div className={styles.paginator}>
           {pages.map((p) => {
-            return <span className={this.props.currentPage === p && styles.selectedPage }>{p}</span>
+            return <span 
+              onClick={(e) => this.onPageChanged(p)}
+              className={this.props.currentPage === p && styles.selectedPage }> {p} </span>
           } )}
         
         

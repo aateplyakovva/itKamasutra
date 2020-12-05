@@ -19,5 +19,6 @@
 }
 
 .paginator {
+  cursor: pointer;
   margin: 5px;
 }
