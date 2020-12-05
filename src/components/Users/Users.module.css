@@ -1,0 +1,23 @@
+.avatar {
+  background-color: cornsilk;
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+}
+
+.userCard {
+  background-color: rgb(255, 229, 81);
+
+  border: 1px solid grey;
+  margin: 5px;
+  padding: 5px;
+}
+
+.selectedPage {
+  font-weight: bold;
+}
+
+.paginator {
+  margin: 5px;
+}

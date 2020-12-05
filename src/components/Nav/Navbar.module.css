@@ -1,0 +1,22 @@
+.nav {
+  grid-area: n;
+  background-color: rgb(36, 189, 216);
+  padding: 5px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+a.active {
+  color: gold;
+}
+
+.threeFriends {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.oneFriend {
+  display: inline;
+}
