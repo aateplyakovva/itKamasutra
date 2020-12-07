@@ -1,5 +1,8 @@
 .infoContent {
+  border: 1px solid grey;
+  background-color: rgb(255, 229, 81);
   padding: 5px;
+  margin: 5px;
 }
 
 .content .wallpaper {
@@ -7,5 +10,7 @@
 }
 
 .avatar {
+  background-color: #fff;
+  border: 1px solid grey;
   width: 200px;
 }

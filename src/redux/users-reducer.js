@@ -17,8 +17,7 @@ let initialState = {
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case FOLLOW: {
-      return {
-        ...state,
+      return {...state,
         users: state.users.map((u) => {
           if (u.id === action.userId) {
             return { ...u, followed: true };
@@ -28,8 +27,7 @@ const usersReducer = (state = initialState, action) => {
       };
     }
     case UNFOLLOW: {
-      return {
-        ...state,
+      return {...state,
         users: state.users.map((u) => {
           if (u.id === action.userId) {
             return { ...u, followed: false };
@@ -39,9 +37,7 @@ const usersReducer = (state = initialState, action) => {
       };
     }
     case SET_USERS: {
-      return { ...state, users: [
-        // ...state.users, 
-        ...action.users] };
+      return { ...state, users: [...action.users] };
     }
     case SET_CURRENT_PAGE: {
       return { ...state, currentPage : action.currentPage};

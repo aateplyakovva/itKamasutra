@@ -1,7 +1,14 @@
 import { React } from "react";
 import c from "./ProfileInfo.module.css";
 
-const ProfileInfo = () => {
+import Loader from './../../common/Loader/loader.component';
+
+
+const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Loader/>
+  }
+
   return (
     <div className={c.content}>
       <div className={c.wallpaper}>
@@ -11,8 +18,9 @@ const ProfileInfo = () => {
         />
       </div>
       <div className={c.infoContent}>
-        <img className={c.avatar} src="../logo192.png" alt="ava" />
-        <div>imformation</div>
+        <img className={c.avatar} src={props.profile.photos.small || "../../../logo192.png" } alt="ava" />
+        <h2>{props.profile.fullName}</h2>
+        <h3>{props.profile.aboutMe}</h3>
       </div>
     </div>
   );
