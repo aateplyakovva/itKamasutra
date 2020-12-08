@@ -3,13 +3,21 @@ import Profile from "./Profile";
 import * as axios from 'axios'
 import { setProfile } from '../../redux/profile-reducer'
 import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
 
 class ProfileContainer extends Component {
 
+	
+
 	componentDidMount() {
-		axios.get(`http://localhost:3004/profile/`)
-   		.then(response => {
-			this.props.setProfile(response.data)
+		debugger
+		let userId = this.props.match.params.userId ;
+		if (!userId) {
+			userId = 2
+		}
+		axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)	//it-kamasutra API
+			.then(response => {
+				this.props.setProfile(response.data)
     })
 	}
 
@@ -24,6 +32,8 @@ class ProfileContainer extends Component {
 
 let mapStateToProps = (state) => ({  
 	profile: state.profilePage.profile,
-  })
+})
 
-export default connect( mapStateToProps, { setProfile } )(ProfileContainer)
+let ProfileContainerWithRouter = withRouter(ProfileContainer)
+
+export default connect( mapStateToProps, { setProfile } )(ProfileContainerWithRouter)

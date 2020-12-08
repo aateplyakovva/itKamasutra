@@ -14,3 +14,5 @@
 [1206/141611.161:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
 [1207/132623.296:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
 [1207/134718.871:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\boris\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\496588b5-c431-418e-bf54-c9cc5eeefbd4: Системе не удается найти указанный путь. (0x3)
+[1208/130038.851:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\boris\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\a07668b7-dd96-4a05-a83f-d27af63893da: Системе не удается найти указанный путь. (0x3)
+[1208/132142.586:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)

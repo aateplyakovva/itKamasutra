@@ -18,7 +18,7 @@ const ProfileInfo = (props) => {
         />
       </div>
       <div className={c.infoContent}>
-        <img className={c.avatar} src={props.profile.photos.small || "../../../logo192.png" } alt="ava" />
+        <img className={c.avatar} src={props.profile.photos.small || `https://robohash.org/${props.profile.userId}?set=set5&size=180x180` } alt="ava" />
         <h2>{props.profile.fullName}</h2>
         <h3>{props.profile.aboutMe}</h3>
       </div>
